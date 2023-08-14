@@ -1,0 +1,8 @@
+
+*.identcache
+src/Conference2023.dproj.local
+src/Conference2023.res
+src/Win32/Debug/Conference2023.exe
+src/Win32/Debug/Controller.Login.dcu
+src/Win32/Debug/FConference.dcu
+src/Win32/Debug/Model.Usuario.dcu
