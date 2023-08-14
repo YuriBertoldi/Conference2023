@@ -1,0 +1,30 @@
+unit Controller.Login;
+
+interface
+
+uses
+  Model.login, Model.Usuario;
+
+type
+  TLoginController = class
+  private
+    FLoginManager: TLogin;
+  public
+    constructor Create;
+    function DoLogin(const Usuario: TUsuario): TLoginResult;
+  end;
+
+implementation
+
+constructor TLoginController.Create;
+begin
+  FLoginManager := TLogin.Create;
+end;
+
+function TLoginController.DoLogin(const Usuario: TUsuario): TLoginResult;
+begin
+  Result := FLoginManager.AuthenticateUser(Usuario);
+end;
+
+end.
+

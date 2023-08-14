@@ -1,0 +1,27 @@
+unit Model.Login;
+
+interface
+
+uses
+  Model.Usuario;
+
+type
+  TLoginResult = (lrSuccess, lrInvalidCredentials, lrServerError);
+
+  TLogin = class
+  public
+    function AuthenticateUser(const Usuario: TUsuario): TLoginResult;
+  end;
+
+implementation
+
+function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
+begin
+  if (Usuario.Username = 'usuario' ) and (Usuario.Password = 'senha') then
+    Result := lrSuccess
+  else
+    Result := lrInvalidCredentials;
+end;
+
+end.
+

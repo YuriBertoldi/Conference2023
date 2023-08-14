@@ -1,0 +1,14 @@
+program Conference;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  FConference in 'view\FConference.pas' {FrmConference};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFrmConference, FrmConference);
+  Application.Run;
+end.

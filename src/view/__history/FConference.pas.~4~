@@ -1,0 +1,51 @@
+unit FConference;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects, FMX.Layouts, Controller.Login;
+
+type
+  TFrmConference = class(TForm)
+    LayLogo: TLayout;
+    Image1: TImage;
+    Image2: TImage;
+    Rectangle1: TRectangle;
+    Layout1: TLayout;
+    Layout2: TLayout;
+    Rectangle2: TRectangle;
+    Layout3: TLayout;
+    Label1: TLabel;
+    edUser: TEdit;
+    Layout4: TLayout;
+    btnLogar: TRectangle;
+    Layout5: TLayout;
+    Rectangle4: TRectangle;
+    Label3: TLabel;
+    edPassword: TEdit;
+    Label2: TLabel;
+    Layout6: TLayout;
+    Label4: TLabel;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+    FControllerLogin : TLoginController;
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmConference: TFrmConference;
+
+implementation
+
+{$R *.fmx}
+
+procedure TFrmConference.FormCreate(Sender: TObject);
+begin
+  FControllerLogin := TLoginController.Create;
+end;
+
+end.

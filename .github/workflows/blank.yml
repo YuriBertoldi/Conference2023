@@ -1,36 +1,51 @@
-# This is a basic workflow to help you get started with Actions
+name: Sample in GitHub Action
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    - name: Setting Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
+      
+    - name: Run code Go
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        go get -v -t -d ./...
+        go build -v
+        go run main.go
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    - name: modification
+      id: changes
+      run: |
+        CHANGED_FILES=$(git diff --name-only)
+        if [[ -n $CHANGED_FILES ]]; then
+          echo "Foram encontradas alterações nos arquivos:"
+          echo "$CHANGED_FILES"
+          echo "IT_FOUND=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "Nenhuma alteração encontrada nos arquivos."
+          echo "IT_FOUND=false" >> "$GITHUB_OUTPUT"
+        fi
+        echo "Alteracao: ${{ steps.changes.outputs.IT_FOUND }}"
+        
+    - name: Committ/push
+      if: steps.changes.outputs.IT_FOUND == 'true'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add .
+        git commit -a -m "Alteração CI/CD"
+        git push

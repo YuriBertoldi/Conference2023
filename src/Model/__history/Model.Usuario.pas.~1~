@@ -1,0 +1,25 @@
+unit Model.Usuario;
+
+interface
+
+type
+  TUsuario = class
+  private
+    FUsername: string;
+    FPassword: string;
+  public
+    constructor Create(const AUsername, APassword: string);
+    property Username: string read FUsername;
+    property Password: string read FPassword;
+  end;
+
+implementation
+
+constructor TUsuario.Create(const AUsername, APassword: string);
+begin
+  FUsername := AUsername;
+  FPassword := APassword;
+end;
+
+end.
+
