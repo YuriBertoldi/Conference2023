@@ -19,6 +19,7 @@ type
 
 implementation
 
+
 //<TEST>
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
