@@ -20,7 +20,20 @@ type
 implementation
 
 
-//<TEST>
+
+//Teste unitario
+procedure TestAuthenticateUser;
+var
+  Usuario: TUsuario;
+  LoginResult: TLoginResult;
+begin
+  Usuario.Username := 'usuario';
+  Usuario.Password := 'senha';
+  LoginResult := TLogin.AuthenticateUser(Usuario);
+  Assert(LoginResult = lrSuccess);
+end;
+
+
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
   if (Usuario.Username = 'usuario' ) and (Usuario.Password = 'senha') then
@@ -28,7 +41,7 @@ begin
   else
     Result := lrInvalidCredentials;
 end;
-//</TEST>
+
 
 { TLoginResultHelper }
 
