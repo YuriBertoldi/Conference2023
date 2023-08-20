@@ -263,13 +263,14 @@ func ProcessInDelphiFile(filename string) error {
 		endIndex := strings.Index(string(content), endTag)
 		indentation := GetIndentation(code, TagUsada)
 
-		// Aplicar a indentação ao texto retornado pela API
+		// Aplicar a indentação e comentario ao texto retornado pela API
 		indentedText := ""
 		lines := strings.Split(text, "\n")
 		for _, line := range lines {
-			indentedText += indentation + line + "\n"
+			indentedText += indentation + "\\" + line + "\n"
 		}
 
+		//Adicionando codigo enviado para api no slice para que não seja removido do arquivo.
 		indentedText += "\n" + code
 
 		// Verificar se as tags foram encontradas
