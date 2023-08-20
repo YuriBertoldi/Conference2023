@@ -269,6 +269,9 @@ func ProcessInDelphiFile(filename string) error {
 		for _, line := range lines {
 			indentedText += indentation + line + "\n"
 		}
+
+		indentedText += "\n" + code
+
 		// Verificar se as tags foram encontradas
 		if startIndex != -1 && endIndex != -1 {
 			// Criar um novo slice de bytes para o novo conteúdo
