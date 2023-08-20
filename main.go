@@ -113,7 +113,7 @@ func FetchCodeFirstTag(code string) (string, string, string) {
 	if result == "" {
 		result, _ = ExtractCodeTag(code, TAG_TEST)
 		tag = TAG_TEST
-		action = "Realize um metodo de teste unitario em delphi para o fonte a seguir e me devolva o fonte a seguir com o metodo de teste comentado: "
+		action = "Realize um metodo de teste unitario em delphi para o fonte a seguir e me devolva o fonte a seguir com o fonte de teste comentado: "
 	}
 	if result == "" {
 		result, _ = ExtractCodeTag(code, TAG_SECURITY)
