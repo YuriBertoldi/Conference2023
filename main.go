@@ -267,7 +267,7 @@ func ProcessInDelphiFile(filename string) error {
 		indentedText := ""
 		lines := strings.Split(text, "\n")
 		for _, line := range lines {
-			indentedText += indentation + "\\" + line + "\n"
+			indentedText += indentation + "//" + line + "\n"
 		}
 
 		//Adicionando codigo enviado para api no slice para que não seja removido do arquivo.
