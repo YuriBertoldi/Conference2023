@@ -19,7 +19,6 @@ type
 
 implementation
 
-//
 ////Teste unitario
 //procedure TestAuthenticateUser;
 //var

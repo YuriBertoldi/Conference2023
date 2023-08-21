@@ -39,14 +39,11 @@ begin
   UpdateMessage(Result, LabelMessage);
 end;
 
-
-//<DOCUMENT>
 procedure TLoginController.SetUser(const Username, Password: string);
 begin
   FUser.Username := username;
   FUser.Password := Password;
 end;
-//</DOCUMENT>
 
 procedure TLoginController.UpdateMessage(TypeMessage: TLoginResult;
   LabelMessage: tLabel);

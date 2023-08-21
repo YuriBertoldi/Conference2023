@@ -118,7 +118,7 @@ func FetchCodeFirstTag(code string) (string, string, string) {
 	if result == "" {
 		result, _ = ExtractCodeTag(code, TAG_SECURITY)
 		tag = TAG_SECURITY
-		action = "Realize uma analise de segurança no fonte a seguir e um comentario com as melhorias de segurança: "
+		action = "Realize uma analise de segurança no fonte a seguir e me devolva um comentario com as melhorias de segurança: "
 	}
 
 	if result == "" {
