@@ -2,8 +2,7 @@ unit Model.Login;
 
 interface
 
-uses
-  Model.Usuario;
+uses Model.Usuario;
 
 type
   TLoginResult = (lrSuccess, lrInvalidCredentials, lrServerError);
