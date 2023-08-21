@@ -118,7 +118,7 @@ func FetchCodeFirstTag(code string) (string, string, string) {
 	if result == "" {
 		result, _ = ExtractCodeTag(code, TAG_SECURITY)
 		tag = TAG_SECURITY
-		action = "Realize uma analise de segurança no fonte a seguir e me devolva um comentario com as melhorias de segurança: "
+		action = "Realize uma analise de segurança no fonte a seguir e me devolva um comentario com as melhorias de segurança sem acentos: "
 	}
 
 	if result == "" {
@@ -274,7 +274,7 @@ func ProcessInDelphiFile(filename string) error {
 
 		//Adicionando codigo enviado para api no slice para que não seja removido do arquivo.
 		indentedText += code
-		fmt.Println("Texto formatado:", indentedText)
+
 		// Verificar se as tags foram encontradas
 		if startIndex != -1 && endIndex != -1 {
 			// Criar um novo slice de bytes para o novo conteúdo
