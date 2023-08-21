@@ -109,7 +109,7 @@ func FetchCodeFirstTag(code string) (string, string, string) {
 
 	result, _ = ExtractCodeTag(code, TAG_DOCUMENT)
 	tag = TAG_DOCUMENT
-	action = "Realize o comentario do fonte a seguir e me devolva o comentário: "
+	action = "Realize o comentario do fonte a seguir e me devolva o comentário sem acentos na escrita do comentario: "
 	if result == "" {
 		result, _ = ExtractCodeTag(code, TAG_TEST)
 		tag = TAG_TEST
@@ -118,7 +118,7 @@ func FetchCodeFirstTag(code string) (string, string, string) {
 	if result == "" {
 		result, _ = ExtractCodeTag(code, TAG_SECURITY)
 		tag = TAG_SECURITY
-		action = "Realize uma analise de segurança no fonte a seguir e me devolva um comentario com as melhorias de segurança sem acentos: "
+		action = "Realize uma analise de segurança no fonte a seguir e me devolva um comentário com as melhorias de segurança sem acentos sem acentos na escrita do comentário: "
 	}
 
 	if result == "" {
@@ -295,10 +295,10 @@ func ProcessInDelphiFile(filename string) error {
 				return err
 			}
 		} else {
-			return errors.New("Tags não encontradas no arquivo")
+			return errors.New("tags não encontradas no arquivo")
 		}
 	} else {
-		return errors.New("Nenhuma escolha encontrada na resposta")
+		return errors.New("nenhuma escolha encontrada na resposta")
 	}
 
 	return nil
