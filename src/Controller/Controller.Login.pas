@@ -40,13 +40,16 @@ begin
 end;
 
 
-//<DOCUMENT>
+//
+////Procedimento para definir o usuário, atribuindo o nome de usuário e senha aos atributos do objeto FUser.
+
+
 procedure TLoginController.SetUser(const Username, Password: string);
 begin
   FUser.Username := username;
   FUser.Password := Password;
 end;
-//</DOCUMENT>
+
 
 procedure TLoginController.UpdateMessage(TypeMessage: TLoginResult;
   LabelMessage: tLabel);
