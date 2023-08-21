@@ -31,7 +31,7 @@ implementation
 //  Assert(LoginResult = lrSuccess);
 //end;
 
-
+//<SECURITY>
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
   if (Usuario.Username = 'usuario' ) and (Usuario.Password = 'senha') then
@@ -39,7 +39,7 @@ begin
   else
     Result := lrInvalidCredentials;
 end;
-
+//</SECURITY>
 
 { TLoginResultHelper }
 

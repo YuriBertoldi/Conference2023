@@ -1,4 +1,4 @@
-﻿unit Controller.Login;
+unit Controller.Login;
 
 interface
 
@@ -39,11 +39,17 @@ begin
   UpdateMessage(Result, LabelMessage);
 end;
 
+
+//
+////Procedimento para definir o usuário, atribuindo o nome de usuário e senha aos atributos do objeto FUser.
+
+
 procedure TLoginController.SetUser(const Username, Password: string);
 begin
   FUser.Username := username;
   FUser.Password := Password;
 end;
+
 
 procedure TLoginController.UpdateMessage(TypeMessage: TLoginResult;
   LabelMessage: tLabel);
