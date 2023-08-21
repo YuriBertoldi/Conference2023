@@ -273,8 +273,8 @@ func ProcessInDelphiFile(filename string) error {
 		}
 
 		//Adicionando codigo enviado para api no slice para que não seja removido do arquivo.
-		indentedText += "\n" + code
-
+		indentedText += code
+		fmt.Println("Texto formatado:", indentedText)
 		// Verificar se as tags foram encontradas
 		if startIndex != -1 && endIndex != -1 {
 			// Criar um novo slice de bytes para o novo conteúdo
