@@ -31,7 +31,8 @@ implementation
 //  Assert(LoginResult = lrSuccess);
 //end;
 
-//<SECURITY>
+//Neste código, a autenticação de usuário é realizada com base em um usuário e senha pré-definidos. Esta abordagem não é segura, pois qualquer pessoa que conheça o usuário e a senha pode acessar o sistema. Para melhorar a segurança, recomenda-se usar um mecanismo de autenticação mais robusto, como autenticação de dois fatores ou autenticação por token. Além disso, recomenda-se armazenar as credenciais de usuário em um banco de dados seguro e criptografado, em vez de armazená-las no código.
+
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
   if (Usuario.Username = 'usuario' ) and (Usuario.Password = 'senha') then
@@ -39,7 +40,7 @@ begin
   else
     Result := lrInvalidCredentials;
 end;
-//</SECURITY>
+
 
 { TLoginResultHelper }
 
