@@ -64,13 +64,14 @@ begin
   FControllerLogin := TLoginController.Create;
 end;
 
-//<DOCUMENT>
+// Procedimento para realizar o login do usuario, setando o usuario e chamando o controller de login para realizar o login e exibir o status
+
 procedure TFrmConference.Logar;
 begin
   SetUser;
   FControllerLogin.DoLogin(lbStatus);
 end;
-//</DOCUMENT>
+
 
 procedure TFrmConference.SetUser;
 begin
