@@ -29,6 +29,7 @@ end;
 
 { TLoginResultHelper }
 
+//<DOCUMENT>
 function TLoginResultHelper.Text: string;
 begin
   case self of
@@ -37,6 +38,7 @@ begin
     lrServerError       : Result := 'Erro no servidor.';
   end;
 end;
+//</DOCUMENT>
 
 end.
 
