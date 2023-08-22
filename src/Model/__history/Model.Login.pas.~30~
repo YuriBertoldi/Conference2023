@@ -2,8 +2,7 @@ unit Model.Login;
 
 interface
 
-uses
-  Model.Usuario;
+uses Model.Usuario;
 
 type
   TLoginResult = (lrSuccess, lrInvalidCredentials, lrServerError);
@@ -19,8 +18,8 @@ type
 
 implementation
 
+// Função para autenticar usuario, verificando se o nome de usuario e senha estão corretos. Se sim, retorna lrSuccess, caso contrário, retorna lrInvalidCredentials
 
-//<SECURITY>
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
   if (Usuario.Username = 'usuario' ) and (Usuario.Password = 'senha') then
@@ -28,7 +27,7 @@ begin
   else
     Result := lrInvalidCredentials;
 end;
-//</SECURITY>
+
 
 { TLoginResultHelper }
 
@@ -40,6 +39,7 @@ begin
     lrServerError       : Result := 'Erro no servidor.';
   end;
 end;
+
 
 end.
 

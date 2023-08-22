@@ -18,8 +18,6 @@ type
 
 implementation
 
-// Função para autenticar usuario, verificando se o nome de usuario e senha estão corretos. Se sim, retorna lrSuccess, caso contrário, retorna lrInvalidCredentials
-
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
   if (Usuario.Username = 'usuario' ) and (Usuario.Password = 'senha') then
@@ -27,7 +25,6 @@ begin
   else
     Result := lrInvalidCredentials;
 end;
-
 
 { TLoginResultHelper }
 

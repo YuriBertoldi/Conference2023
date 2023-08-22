@@ -64,13 +64,11 @@ begin
   FControllerLogin := TLoginController.Create;
 end;
 
-//<DOCUMENT>
 procedure TFrmConference.Logar;
 begin
   SetUser;
   FControllerLogin.DoLogin(lbStatus);
 end;
-//</DOCUMENT>
 
 procedure TFrmConference.SetUser;
 begin
