@@ -18,7 +18,8 @@ type
 
 implementation
 
-//<SECURITY>
+// O codigo acima nao possui boas praticas de seguranca, pois a senha e o usuario estao hardcoded. Para melhorar a seguranca, deve-se armazenar a senha e o usuario em um banco de dados e validar as credenciais do usuario com o banco de dados. Além disso, deve-se usar algoritmos de criptografia para armazenar a senha no banco de dados.
+
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
   if (Usuario.Username = 'usuario' ) and (Usuario.Password = 'senha') then
@@ -26,7 +27,7 @@ begin
   else
     Result := lrInvalidCredentials;
 end;
-//</SECURITY>
+
 
 { TLoginResultHelper }
 
