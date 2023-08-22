@@ -29,7 +29,8 @@ end;
 
 { TLoginResultHelper }
 
-//<DOCUMENT>
+// Função para retornar o texto de acordo com o resultado da autenticação do usuário
+
 function TLoginResultHelper.Text: string;
 begin
   case self of
@@ -38,7 +39,7 @@ begin
     lrServerError       : Result := 'Erro no servidor.';
   end;
 end;
-//</DOCUMENT>
+
 
 end.
 
