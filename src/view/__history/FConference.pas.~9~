@@ -1,4 +1,4 @@
-﻿unit FConference;
+unit FConference;
 
 interface
 
@@ -64,6 +64,7 @@ begin
   FControllerLogin := TLoginController.Create;
 end;
 
+// Procedimento para realizar o login do usuário, setando o usuário e chamando o controller de login para realizar o login e exibir o status
 
 procedure TFrmConference.Logar;
 begin
