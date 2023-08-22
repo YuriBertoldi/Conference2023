@@ -289,8 +289,10 @@ func ProcessInDelphiFile(filename string) error {
 			// Copiar o conteúdo após a última tag
 			newContent = append(newContent, content[endIndex+len(endTag):]...)
 
+			fmt.Println("Texto gravado:", newContent)
+
 			// Escrever o conteúdo modificado de volta para o arquivo
-			err = os.WriteFile(filename, newContent, os.ModePerm)
+			err = ioutil.WriteFile(filename, newContent, os.ModePerm)
 			if err != nil {
 				return err
 			}
