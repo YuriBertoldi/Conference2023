@@ -109,7 +109,7 @@ func FetchCodeFirstTag(code string) (string, string, string) {
 
 	result, _ = ExtractCodeTag(code, TAG_DOCUMENT)
 	tag = TAG_DOCUMENT
-	action = "Realize o comentario do fonte a seguir e me devolva o comentário sem acentos na escrita do comentario: "
+	action = "Crie o comentário do fonte a seguir e me devolva o comentário sem acentos na escrita do comentário: "
 	if result == "" {
 		result, _ = ExtractCodeTag(code, TAG_TEST)
 		tag = TAG_TEST
@@ -268,7 +268,11 @@ func ProcessInDelphiFile(filename string) error {
 		lines := strings.Split(text, "\n")
 		for _, line := range lines {
 			if line != "" {
-				indentedText += indentation + "//" + line + "\n"
+				if TagUsada == TAG_TEST {
+					indentedText += indentation + "//" + line + "\n"
+				} else {
+					indentedText += indentation + line + "\n"
+				}
 			}
 		}
 
