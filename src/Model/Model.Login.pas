@@ -26,10 +26,7 @@ begin
     Result := lrInvalidCredentials;
 end;
 
-
 { TLoginResultHelper }
-
-// Função para retornar o texto de acordo com o resultado da autenticação do usuário
 
 function TLoginResultHelper.Text: string;
 begin

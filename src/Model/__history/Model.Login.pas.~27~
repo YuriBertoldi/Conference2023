@@ -2,8 +2,7 @@ unit Model.Login;
 
 interface
 
-uses
-  Model.Usuario;
+uses Model.Usuario;
 
 type
   TLoginResult = (lrSuccess, lrInvalidCredentials, lrServerError);
@@ -19,20 +18,6 @@ type
 
 implementation
 
-////Teste unitario
-//procedure TestAuthenticateUser;
-//var
-//  Usuario: TUsuario;
-//  LoginResult: TLoginResult;
-//begin
-//  Usuario.Username := 'usuario';
-//  Usuario.Password := 'senha';
-//  LoginResult := TLogin.AuthenticateUser(Usuario);
-//  Assert(LoginResult = lrSuccess);
-//end;
-
-//Neste código, a autenticação de usuário é realizada com base em um usuário e senha pré-definidos. Esta abordagem não é segura, pois qualquer pessoa que conheça o usuário e a senha pode acessar o sistema. Para melhorar a segurança, recomenda-se usar um mecanismo de autenticação mais robusto, como autenticação de dois fatores ou autenticação por token. Além disso, recomenda-se armazenar as credenciais de usuário em um banco de dados seguro e criptografado, em vez de armazená-las no código.
-
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
   if (Usuario.Username = 'usuario' ) and (Usuario.Password = 'senha') then
@@ -44,6 +29,8 @@ end;
 
 { TLoginResultHelper }
 
+// Função para retornar o texto de acordo com o resultado da autenticação do usuário
+
 function TLoginResultHelper.Text: string;
 begin
   case self of
@@ -52,6 +39,7 @@ begin
     lrServerError       : Result := 'Erro no servidor.';
   end;
 end;
+
 
 end.
 
