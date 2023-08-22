@@ -2,8 +2,7 @@ unit Model.Login;
 
 interface
 
-uses
-  Model.Usuario;
+uses Model.Usuario;
 
 type
   TLoginResult = (lrSuccess, lrInvalidCredentials, lrServerError);
@@ -19,19 +18,7 @@ type
 
 implementation
 
-//
-////Teste unitario
-//procedure TestAuthenticateUser;
-//var
-//  Usuario: TUsuario;
-//  LoginResult: TLoginResult;
-//begin
-//  Usuario.Username := 'usuario';
-//  Usuario.Password := 'senha';
-//  LoginResult := TLogin.AuthenticateUser(Usuario);
-//  Assert(LoginResult = lrSuccess);
-//end;
-
+// O codigo acima nao possui medidas de seguranca adequadas para autenticacao de usuarios. Uma melhoria seria validar o usuario e a senha contra um banco de dados, ao inves de comparar com valores hardcoded. Além disso, a senha deveria ser armazenada de forma segura, como por exemplo, criptografada.
 
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin

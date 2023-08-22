@@ -18,8 +18,6 @@ type
 
 implementation
 
-// O codigo acima nao possui medidas de seguranca adequadas para autenticacao de usuarios. Uma melhoria seria validar o usuario e a senha contra um banco de dados, ao inves de comparar com valores hardcoded. Além disso, a senha deveria ser armazenada de forma segura, como por exemplo, criptografada.
-
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
   if (Usuario.Username = 'usuario' ) and (Usuario.Password = 'senha') then

@@ -2,8 +2,7 @@ unit Model.Login;
 
 interface
 
-uses
-  Model.Usuario;
+uses Model.Usuario;
 
 type
   TLoginResult = (lrSuccess, lrInvalidCredentials, lrServerError);
@@ -18,19 +17,6 @@ type
   end;
 
 implementation
-
-////Teste unitario
-//procedure TestAuthenticateUser;
-//var
-//  Usuario: TUsuario;
-//  LoginResult: TLoginResult;
-//begin
-//  Usuario.Username := 'usuario';
-//  Usuario.Password := 'senha';
-//  LoginResult := TLogin.AuthenticateUser(Usuario);
-//  Assert(LoginResult = lrSuccess);
-//end;
-
 
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
