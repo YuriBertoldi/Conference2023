@@ -18,7 +18,8 @@ type
 
 implementation
 
-//<SECURITY>
+////A melhoria de segurança para o codigo acima seria a utilizacao de um mecanismo de criptografia para armazenar e validar as credenciais do usuario. Além disso, seria interessante adicionar um mecanismo de autenticacao de dois fatores para aumentar a seguranca.
+
 function TLogin.AuthenticateUser(const Usuario: TUsuario): TLoginResult;
 begin
   if (Usuario.Username = 'usuario' ) and (Usuario.Password = 'senha') then
@@ -26,7 +27,7 @@ begin
   else
     Result := lrInvalidCredentials;
 end;
-//</SECURITY>
+
 
 { TLoginResultHelper }
 
